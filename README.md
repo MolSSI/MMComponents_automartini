@@ -11,10 +11,6 @@ A toolkit that enables automatic generation of MARTINI forcefields for small org
 <img src="mmcomponents_automartini/data/automartini.png">
 </p>
 
-### Copyright
-
-Copyright (c) 2020, Andrew Abi-Mansour
-
 #### Acknowledgements
  
 Project based on the 
