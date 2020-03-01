@@ -5,7 +5,7 @@ MMComponents_AutoMartini
 [![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/REPLACE_WITH_APPVEYOR_LINK/branch/master?svg=true)](https://ci.appveyor.com/project/REPLACE_WITH_OWNER_ACCOUNT/MMComponents_AutoMartini/branch/master)
 [![codecov](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/MMComponents_AutoMartini/branch/master/graph/badge.svg)](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/MMComponents_AutoMartini/branch/master)
 
-A short description of the project.
+A toolkit that enables automatic generation of MARTINI forcefields for small organic molecules. See github [repo](https://github.com/tbereau/auto_martini) for original code.
 
 ### Copyright
 
