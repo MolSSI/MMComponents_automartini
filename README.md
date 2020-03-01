@@ -7,10 +7,13 @@ MMComponents_AutoMartini
 
 A toolkit that enables automatic generation of MARTINI forcefields for small organic molecules. See github [repo](https://github.com/tbereau/auto_martini) for original code.
 
+<p align="center">
+<img src="mmcomponents_automartini/data/automartini.png">
+</p>
+
 ### Copyright
 
 Copyright (c) 2020, Andrew Abi-Mansour
-
 
 #### Acknowledgements
  
