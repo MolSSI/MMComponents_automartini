@@ -1,5 +1,5 @@
 """
-MMComponents_AutoMartini
+MMComponents_automartini
 A short description of the project.
 """
 
