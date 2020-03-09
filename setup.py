@@ -1,5 +1,5 @@
 """
-MMComponents_AutoMartini
+MMComponents_automartini
 A short description of the project.
 """
 import sys
@@ -42,7 +42,7 @@ setup(
     include_package_data=True,
 
     # Allows `setup.py test` to work correctly with pytest
-    setup_requires=[] + pytest_runner,
+    setup_requires=['mmelemental'] + pytest_runner,
 
     # Additional entries you may want simply uncomment the lines you want and fill in the data
     # url='http://www.my_package.com',  # Website
@@ -55,5 +55,4 @@ setup(
 
     # Manual control if final package is compressible or not, set False to prevent the .egg from being made
     # zip_safe=False,
-
 )
