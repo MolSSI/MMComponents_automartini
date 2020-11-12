@@ -8,12 +8,12 @@ MMComponent for Forcefield Parametrization
 
 A component for generating parametrized molecules.
 
-Supported engines:
-- [Auto Martini](https://github.com/tbereau/auto_martini): automated [MARTINI](http://www.cgmartini.nl) forcefield mapping and parametrization of small organic molecules.
-
 <p align="center">
 <img src="mmcomponents_automartini/data/ff_component.png">
 </p>
+
+Supported engines:
+- [Auto Martini](https://github.com/tbereau/auto_martini): automated [MARTINI](http://www.cgmartini.nl) forcefield mapping and parametrization of small organic molecules.
 
 #### Acknowledgements
  
