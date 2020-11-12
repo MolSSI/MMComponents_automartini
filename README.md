@@ -9,7 +9,7 @@ MMComponent for Forcefield Parametrization
 A component for generating parametrized molecules.
 
 <p align="center">
-<img src="mmcomponents_automartini/data/ff_component.png">
+<img src="mmic_forcefield/data/ff_component.png">
 </p>
 
 Supported engines:
