@@ -1,4 +1,4 @@
-MMComponent Auto Martini
+MMComponent for Forcefield Parametrization
 ==============================
 
 [//]: # (Badges)
@@ -6,11 +6,14 @@ MMComponent Auto Martini
 [![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/REPLACE_WITH_APPVEYOR_LINK/branch/master?svg=true)](https://ci.appveyor.com/project/REPLACE_WITH_OWNER_ACCOUNT/MMComponents_automartini/branch/master)
 [![codecov](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/MMComponents_automartini/branch/master/graph/badge.svg)](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/MMComponents_automartini/branch/master)
 
-A component for automated [MARTINI](http://www.cgmartini.nl) forcefield mapping and parametrization of small organic molecules. See github [repo](https://github.com/tbereau/auto_martini) for original code.
+A component for generating parametrized molecules.
 
 <p align="center">
 <img src="mmcomponents_automartini/data/ff_component.png">
 </p>
+
+Supported engines:
+- [Auto Martini](https://github.com/tbereau/auto_martini): automated [MARTINI](http://www.cgmartini.nl) forcefield mapping and parametrization of small organic molecules.
 
 #### Acknowledgements
  
