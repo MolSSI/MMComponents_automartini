@@ -1,4 +1,5 @@
-MMComponents_automartini
+MMComponent for automated [MARTINI](http://www.cgmartini.nl) forcefield mapping and parametrization of small organic molecules.
+
 ==============================
 [//]: # (Badges)
 [![Travis Build Status](https://travis-ci.com/REPLACE_WITH_OWNER_ACCOUNT/MMComponents_automartini.svg?branch=master)](https://travis-ci.com/REPLACE_WITH_OWNER_ACCOUNT/MMComponents_automartini)
