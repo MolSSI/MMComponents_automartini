@@ -1,6 +1,7 @@
-MMComponent for automated [MARTINI](http://www.cgmartini.nl) forcefield mapping and parametrization of small organic molecules.
-
+MMComponent Auto Martini
 ==============================
+A component for automated [MARTINI](http://www.cgmartini.nl) forcefield mapping and parametrization of small organic molecules.
+
 [//]: # (Badges)
 [![Travis Build Status](https://travis-ci.com/REPLACE_WITH_OWNER_ACCOUNT/MMComponents_automartini.svg?branch=master)](https://travis-ci.com/REPLACE_WITH_OWNER_ACCOUNT/MMComponents_automartini)
 [![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/REPLACE_WITH_APPVEYOR_LINK/branch/master?svg=true)](https://ci.appveyor.com/project/REPLACE_WITH_OWNER_ACCOUNT/MMComponents_automartini/branch/master)
