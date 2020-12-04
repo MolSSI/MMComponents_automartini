@@ -1,5 +1,5 @@
 """
-MMComponents_automartini
+MMIC_parameterization
 A short description of the project.
 """
 import sys
@@ -21,7 +21,7 @@ except:
 
 setup(
     # Self-descriptive entries which should always be present
-    name='mmcomponents_automartini',
+    name='mmic_parameterization',
     author='Andrew Abi-Mansour',
     author_email='andrew.gaam@gmail.com',
     description=short_description[0],

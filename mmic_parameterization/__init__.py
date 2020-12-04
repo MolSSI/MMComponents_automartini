@@ -1,10 +1,10 @@
 """
-MMComponents_automartini
+mmic_parameterization
 A short description of the project.
 """
 
 # Add imports here
-from .auto_martini import *
+from .mmic_parameterization import *
 
 # Handle versioneer
 from ._version import get_versions
