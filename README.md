@@ -1,4 +1,4 @@
-MMComponent for Forcefield Parametrization
+Component for Forcefield Parametrization
 ==============================
 
 [//]: # (Badges)
@@ -6,7 +6,7 @@ MMComponent for Forcefield Parametrization
 [![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/REPLACE_WITH_APPVEYOR_LINK/branch/master?svg=true)](https://ci.appveyor.com/project/REPLACE_WITH_OWNER_ACCOUNT/MMComponents_automartini/branch/master)
 [![codecov](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/MMComponents_automartini/branch/master/graph/badge.svg)](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/MMComponents_automartini/branch/master)
 
-A component for generating parametrized molecules.
+A component for generating parametrized molecules from existing force fields.
 
 <p align="center">
 <img src="mmic_forcefield/data/ff_component.png">
