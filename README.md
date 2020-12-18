@@ -9,7 +9,7 @@ Component for Forcefield Parametrization
 A component for generating parametrized molecules from existing force fields.
 
 <p align="center">
-<img src="mmic_parameterization/data/ff_component.png">
+<img src="mmic_param/data/ff_component.png">
 </p>
 
 Supported forcefields:

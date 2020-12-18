@@ -21,7 +21,7 @@ except:
 
 setup(
     # Self-descriptive entries which should always be present
-    name='mmic_parameterization',
+    name='mmic_param',
     author='Andrew Abi-Mansour',
     author_email='andrew.gaam@gmail.com',
     description=short_description[0],
@@ -29,7 +29,7 @@ setup(
     long_description_content_type="text/markdown",
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
-    license='GPL-2.0',
+    license='BSD-3',
 
     # Which Python importable modules should be included when your package is installed
     # Handled automatically by setuptools. Use 'exclude' to prevent some specific
