@@ -26,7 +26,7 @@ class PrepComponent(GenericComponent):
         fname = FileOutput.rand_name() + '.pdb'
         inputs.mol.to_file(fname)
 
-        mol = FileInput(path=fname)
-        mol.read()
+        with FileInput(path=fname) as fp:
+            mol = fp.read()
 
-        return True, ComputeInput(mol=mol, forcefield=inputs.forcefield)
+        return True, ComputeInput(mol=mol, forcefield=inputs.forcefield, engine=inputs.engine)
