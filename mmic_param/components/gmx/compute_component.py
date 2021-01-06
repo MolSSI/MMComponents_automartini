@@ -59,15 +59,18 @@ class ComputeComponent(ComputeComponent):
         stderr = output["stderr"]
         outfiles = output["outfiles"]
 
-        if stderr and not True:
+        if stderr:
             # Supress stderro for now because
             # stupid GMX prints pdb2gmx output to stderr
             # See https://redmine.gromacs.org/issues/2211
-            print("Error from {engine}:".format(**inputs))
-            print("=========================")
-            raise RuntimeError(stderr)
+            if False:
+                print("Error from {engine}:".format(**inputs))
+                print("=========================")
+                raise RuntimeError(stderr)
 
-        conf, top, posre = outfiles
+        conf = outfiles['conf.gro']
+        top = outfiles['topol.top']
+        posre = outfiles['posre.itp']
         cmdout = CmdOutput(stdout=stdout, stderr=stderr)
 
         return ComputeOutput(
