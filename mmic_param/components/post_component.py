@@ -3,7 +3,7 @@ from typing import Dict, Any, List, Tuple, Optional
 from mmic_param.models.output import ComputeOutput, ParamOutput 
 
 class PostComponent(GenericComponent):
-    """ A component for constructing a ForceField object from parsing force field files. """
+    """ A component for constructing Molecule & ForceField objects from parsing mol/top/ff files. """
     @classmethod
     def input(cls):
         return ComputeOutput
@@ -11,3 +11,13 @@ class PostComponent(GenericComponent):
     @classmethod
     def output(cls):
         return ParamOutput
+
+    def execute(
+        self,
+        inputs: Dict[str, Any],
+        extra_outfiles: Optional[List[str]] = None,
+        extra_commands: Optional[List[str]] = None,
+        scratch_name: Optional[str] = None,
+        timeout: Optional[int] = None,
+    ) -> Tuple[bool, Dict[str, Any]]:
+        raise NotImplementedError
