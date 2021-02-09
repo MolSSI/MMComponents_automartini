@@ -4,6 +4,9 @@ from mmelemental.models.util.input import FileInput
 from mmic_param.models.input import ParamInput, ComputeInput
 from typing import Dict, Any, List, Tuple, Optional
 
+
+__all__ = ['PrepComponent']
+
 class PrepComponent(GenericComponent):
     """ A component for converting a Molecule object to a FileOutput. """
     @classmethod

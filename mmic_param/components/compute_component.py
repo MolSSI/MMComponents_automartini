@@ -5,6 +5,8 @@ from mmelemental.models.util.output import FileOutput
 
 from typing import Any, Dict, List, Tuple, Optional
 
+__all__ = ['ComputeComponent']
+
 class ComputeComponent(CmdComponent):
     """ A template component for generating a pramaterized molecule. 
     Cmd process: build_input() -> run() -> parse_output().
