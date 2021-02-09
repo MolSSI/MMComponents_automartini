@@ -4,6 +4,7 @@ from typing import List, Tuple, Optional
 
 import mmcomponents_forcefield
 
+
 class PrepComponent(mmcomponents_forcefield.components.PrepComponent):
     """ A component for preparing input for auto_martini from MMSchema. """
 
@@ -17,10 +18,10 @@ class PrepComponent(mmcomponents_forcefield.components.PrepComponent):
     ) -> Tuple[bool, FileOutput]:
 
         if inputs.identifiers:
-            filename = 'some_name.sdf'
+            filename = "some_name.sdf"
             inputs.to_file(filename)
         else:
-            filename = 'some_name.gro'
+            filename = "some_name.gro"
             inputs.to_file(filename)
 
-        return True, FileOutput(path='some_name.gro')
+        return True, FileOutput(path="some_name.gro")

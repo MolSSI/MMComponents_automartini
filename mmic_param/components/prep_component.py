@@ -5,10 +5,12 @@ from mmic_param.models.input import ParamInput, ComputeInput
 from typing import Dict, Any, List, Tuple, Optional
 
 
-__all__ = ['PrepComponent']
+__all__ = ["PrepComponent"]
+
 
 class PrepComponent(GenericComponent):
     """ A component for converting a Molecule object to a FileOutput. """
+
     @classmethod
     def input(cls):
         return ParamInput
@@ -26,10 +28,12 @@ class PrepComponent(GenericComponent):
         timeout: Optional[int] = None,
     ) -> Tuple[bool, Dict[str, Any]]:
 
-        fname = FileOutput.rand_name() + '.pdb'
+        fname = FileOutput.rand_name() + ".pdb"
         inputs.mol.to_file(fname)
 
         with FileInput(path=fname) as fp:
             mol = fp.read()
 
-        return True, ComputeInput(mol=mol, forcefield=inputs.forcefield, engine=inputs.engine)
+        return True, ComputeInput(
+            mol=mol, forcefield=inputs.forcefield, engine=inputs.engine
+        )

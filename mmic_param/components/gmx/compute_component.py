@@ -1,9 +1,9 @@
-from typing import Any, Dict, List, Tuple, Optional
-from ..compute_component import ComputeComponent
-from mmic_param.models.input import ComputeInput
-from mmic_param.models.output import ComputeOutput 
+from typing import Any, Dict, Optional
+from mmic_param.components.compute_component import ComputeComponent
+from mmic_param.models.output import ComputeOutput
 from mmelemental.models.util.output import CmdOutput
 import os
+
 
 class ComputeComponent(ComputeComponent):
     """ A component for generating a pramaterized molecule. """
@@ -15,19 +15,19 @@ class ComputeComponent(ComputeComponent):
         template: Optional[str] = None,
     ) -> Dict[str, Any]:
 
-        assert input_model['engine'] == 'gmx', 'Engine must be GROMACS/gmx!'
-        cmd = [input_model['engine'], 'pdb2gmx']
+        assert input_model["engine"] == "gmx", "Engine must be GROMACS/gmx!"
+        cmd = [input_model["engine"], "pdb2gmx"]
 
         for key, val in input_model.items():
-            if key == 'forcefield':
-                cmd.extend(['-ff', val])
-            if key == 'mol':
-                cmd.extend(['-f', val])
-            if key == 'solv_forcefield':
+            if key == "forcefield":
+                cmd.extend(["-ff", val])
+            if key == "mol":
+                cmd.extend(["-f", val])
+            if key == "solv_forcefield":
                 if val:
-                    cmd.extend(['-water', val])
+                    cmd.extend(["-water", val])
                 else:
-                    cmd.extend(['-water', 'none'])
+                    cmd.extend(["-water", "none"])
 
         env = os.environ.copy()
 
@@ -40,20 +40,14 @@ class ComputeComponent(ComputeComponent):
         return {
             "command": cmd,
             "infiles": None,
-            "outfiles": [
-                "conf.gro",
-                "topol.top",
-                "posre.itp"
-            ],
+            "outfiles": ["conf.gro", "topol.top", "posre.itp"],
             "scratch_directory": scratch_directory,
             "environment": env,
-            "clean_files": input_model.get('clean_files')
+            "clean_files": input_model.get("clean_files"),
         }
 
     def parse_output(
-        self, 
-        output: Dict[str, str], 
-        inputs: Dict[str, Any]
+        self, output: Dict[str, str], inputs: Dict[str, Any]
     ) -> ComputeOutput:
         stdout = output["stdout"]
         stderr = output["stderr"]
@@ -63,18 +57,14 @@ class ComputeComponent(ComputeComponent):
             # Supress stderro for now because
             # stupid GMX prints pdb2gmx output to stderr
             # See https://redmine.gromacs.org/issues/2211
-            if False:
+            if output.get("Debug"):
                 print("Error from {engine}:".format(**inputs))
                 print("=========================")
                 raise RuntimeError(stderr)
 
-        conf = outfiles['conf.gro']
-        top = outfiles['topol.top']
-        posre = outfiles['posre.itp']
+        conf = outfiles["conf.gro"]
+        top = outfiles["topol.top"]
+        # posre = outfiles['posre.itp']
         cmdout = CmdOutput(stdout=stdout, stderr=stderr)
 
-        return ComputeOutput(
-            cmdout=cmdout,
-            mol=conf,
-            forcefield=top
-        )
+        return ComputeOutput(cmdout=cmdout, mol=conf, forcefield=top)
