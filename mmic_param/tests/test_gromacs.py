@@ -19,7 +19,7 @@ from mmic_param.components.gmx.post_component import PostComponent
 
 fpath = os.path.join('mmic_param', 'data', 'molecules', 'dialanine.pdb')
 
-mol = mmelemental.models.molecule.mm_molecule.Molecule.from_file(fpath)
+mol = mmelemental.models.molecule.Mol.from_file(fpath)
 
 ############## VACUUM ################
 # Prepare input for molecule in vacuum
