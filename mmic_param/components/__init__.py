@@ -7,7 +7,6 @@ import os
 class _findEngines(Mapping):
 	@staticmethod
 	def engines():
-		from mmic_param.components import __path__
 		comp_dir = __path__[0]
 		engines = [eng for eng in next(os.walk(comp_dir))[1] if not eng.startswith('__')]
 		return tuple(engines)
