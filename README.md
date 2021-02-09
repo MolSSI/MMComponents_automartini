@@ -37,7 +37,8 @@ This component provided 4 models derived from MMSchema:
 - [ComputeInput](https://github.com/MolSSI/mmic_param/blob/master/mmic_param/models/input.py#L14)
 - [ParamOutput](https://github.com/MolSSI/mmic_param/blob/master/mmic_param/models/output.py#L12)
 - [ComputeOutput](https://github.com/MolSSI/mmic_param/blob/master/mmic_param/models/output.py#L8)
-```
+
+```python
 from mmic_param.models.input import ParamInput, ComputeInput, ParamOutput, ComputeOutput
 ```
 
