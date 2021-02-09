@@ -1,18 +1,58 @@
-Forcefield parametrization component
-========================================
-
 [//]: # (Badges)
-[![Travis Build Status](https://travis-ci.com/REPLACE_WITH_OWNER_ACCOUNT/MMComponents_automartini.svg?branch=master)](https://travis-ci.com/REPLACE_WITH_OWNER_ACCOUNT/MMComponents_automartini)
-[![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/REPLACE_WITH_APPVEYOR_LINK/branch/master?svg=true)](https://ci.appveyor.com/project/REPLACE_WITH_OWNER_ACCOUNT/MMComponents_automartini/branch/master)
-[![codecov](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/MMComponents_automartini/branch/master/graph/badge.svg)](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/MMComponents_automartini/branch/master)
+[![GitHub Actions Build Status](https://github.com/MolSSI/mmic_param/workflows/CI/badge.svg)](https://github.com/MolSSI/mmic_param/actions?query=workflow%3ACI)
+[![codecov](https://codecov.io/gh/MolSSI/mmic_param/branch/master/graph/badge.svg)](https://codecov.io/gh/MolSSI/mmic_param/branch/master)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/MolSSI/mmic_param.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/MolSSI/mmic_param/context:python)
 
-A component for generating parametrized molecules from existing force fields.
+Forcefield parameter association component
+========================================
+This is part of the [MolSSI](http://molssi.org) Molecular Mechanics Interoperable Components ([MMIC](https://github.com/MolSSI/mmic)) project. This package provides a component for generating parametrized molecules from existing force fields.
 
 <p align="center">
 <img src="mmic_param/data/ff_component.png">
 </p>
 
-Supported forcefields:
+# Basic Usage
+```python
+# Import main component for running the computation
+from mmic_param import RunComponent
+
+# Import the param input and molecule models that comply with MMSchema
+from mmic_param.models.input import ParamInput
+from mmelemental.models.molecule import Mol
+
+# Create an MMSchema molecule
+mol = Mol.from_file(path_to_file)
+
+# Create input for Amber99 FF (optionally) using the GMX engine
+paramInput = ParamInput(mol=mol, forcefield='amber99', engine='gmx')
+paramOutput = RunComponent.compute(paramInput)
+
+# Extract mol and ff objects
+mol, ff = paramOutput.mol, paramOutput.ff
+```
+
+# Basic API
+This component provided 4 models derived from MMSchema: 
+- [ParamInput](https://github.com/MolSSI/mmic_param/blob/master/mmic_param/models/input.py#L8)
+- [ComputeInput](https://github.com/MolSSI/mmic_param/blob/master/mmic_param/models/input.py#L14)
+- [ParamOutput](https://github.com/MolSSI/mmic_param/blob/master/mmic_param/models/output.py#L12)
+- [ComputeOutput](https://github.com/MolSSI/mmic_param/blob/master/mmic_param/models/output.py#L8)
+
+```python
+from mmic_param.models.input import ParamInput, ComputeInput, ParamOutput, ComputeOutput
+```
+
+This component provided 3 subcomponents for associating the force field parameters to a given MMSchema molecule: 
+- [PrepComponent](https://github.com/MolSSI/mmic_param/blob/master/mmic_param/components/prep_component.py#L7)
+- [ComputeComponent](https://github.com/MolSSI/mmic_param/blob/master/mmic_param/components/post_component.py#L5)
+- [PostComponent](https://github.com/MolSSI/mmic_param/blob/master/mmic_param/components/post_component.py#L5)
+
+```python
+from mmic_param.components import PrepComponent, ComputeComponent, PostComponent
+```
+
+
+# Supported forcefields
 - [Amber94](https://pubs.acs.org/doi/abs/10.1021/ja00124a002): Second Generation Amber-based force field for the simulation of proteins, nucleic acids, and organic molecules
 - [Amber96](): 
 - [Amber99](): 
