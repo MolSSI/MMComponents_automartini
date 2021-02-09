@@ -8,22 +8,24 @@ import mmelemental
 import pytest
 import sys, os
 
+
 def test_automartini_imported():
     """Sample test, will always pass so long as import statement worked"""
     assert "mmic_param" in sys.modules
 
+
 from mmic_param.components import PrepComponent
 from mmic_param.models.input import ParamInput, ComputeInput
-from mmic_param.components.gmx.compute_component import ComputeComponent 
+from mmic_param.components.gmx.compute_component import ComputeComponent
 from mmic_param.components.gmx.post_component import PostComponent
 
-fpath = os.path.join('mmic_param', 'data', 'molecules', 'dialanine.pdb')
+fpath = os.path.join("mmic_param", "data", "molecules", "dialanine.pdb")
 
 mol = mmelemental.models.molecule.Mol.from_file(fpath)
 
 ############## VACUUM ################
 # Prepare input for molecule in vacuum
-paramInput = ParamInput(mol=mol, forcefield='amber99', engine='gmx')
+paramInput = ParamInput(mol=mol, forcefield="amber99", engine="gmx")
 computeInput = PrepComponent.compute(paramInput)
 
 # Compute FF params for molecule using gromacs
