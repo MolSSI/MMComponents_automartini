@@ -27,7 +27,7 @@ mol = Mol.from_file(path_to_file)
 paramInput = ParamInput(mol=mol, forcefield='amber99', engine='gmx')
 paramOutput = RunComponent.compute(paramInput)
 
-# Extract mol and ff objects
+# Extract MMSchema mol and and its associated ff object
 mol, ff = paramOutput.mol, paramOutput.ff
 ```
 
