@@ -31,7 +31,7 @@ paramOutput = RunComponent.compute(paramInput)
 mol, ff = paramOutput.mol, paramOutput.ff
 ```
 
-# Basic API
+# Models and subcomponents
 This component provided 4 models derived from MMSchema: 
 - [ParamInput](https://github.com/MolSSI/mmic_param/blob/master/mmic_param/models/input.py#L8)
 - [ComputeInput](https://github.com/MolSSI/mmic_param/blob/master/mmic_param/models/input.py#L14)
@@ -50,7 +50,9 @@ This component provided 3 subcomponents for associating the force field paramete
 ```python
 from mmic_param.components import PrepComponent, ComputeComponent, PostComponent
 ```
-
+# Supported engines
+- [GMX pdb2gmx](https://manual.gromacs.org/documentation/5.1/onlinehelp/gmx-pdb2gmx.html): part of the [Gromacs](https://www.gromacs.org) software suite
+- [Auto Martini](https://github.com/tbereau/auto_martini): automated [MARTINI](http://www.cgmartini.nl) forcefield mapping and parametrization of small organic molecules.
 
 # Supported forcefields
 - [Amber94](https://pubs.acs.org/doi/abs/10.1021/ja00124a002): Second Generation Amber-based force field for the simulation of proteins, nucleic acids, and organic molecules
@@ -69,10 +71,6 @@ from mmic_param.components import PrepComponent, ComputeComponent, PostComponent
 - [Gromos96-53a6]
 - [Gromos96-54a7]
 - [OPLS-AA](https://pubs.acs.org/doi/abs/10.1021/jp003919d): OPLS-based force field for proteins
-
-Supported engines:
-- [GMX pdb2gmx](https://manual.gromacs.org/documentation/5.1/onlinehelp/gmx-pdb2gmx.html): part of the [Gromacs](https://www.gromacs.org) software suite
-- [Auto Martini](https://github.com/tbereau/auto_martini): automated [MARTINI](http://www.cgmartini.nl) forcefield mapping and parametrization of small organic molecules.
 
 #### Acknowledgements
  
