@@ -5,7 +5,7 @@
 
 Forcefield parameter association component
 ========================================
-This is part of the [MolSSI](http://molssi.org) Molecular Mechanics Interoperable Components ([MMIC](https://github.com/MolSSI/mmic)) project. This package provides a component for generating parametrized molecules from existing force fields.
+This is part of the [MolSSI](http://molssi.org) Molecular Mechanics Interoperable Components ([MMIC](https://github.com/MolSSI/mmic)) project. This package provides a component for generating parameterized molecules from existing force fields.
 
 <p align="center">
 <img src="mmic_param/data/ff_component.png">
