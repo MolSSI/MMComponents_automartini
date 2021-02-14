@@ -3,7 +3,7 @@
 [![codecov](https://codecov.io/gh/MolSSI/mmic_param/branch/master/graph/badge.svg)](https://codecov.io/gh/MolSSI/mmic_param/branch/master)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/MolSSI/mmic_param.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/MolSSI/mmic_param/context:python)
 
-Forcefield parameter association component
+Forcefield association component
 ========================================
 This is part of the [MolSSI](http://molssi.org) Molecular Mechanics Interoperable Components ([MMIC](https://github.com/MolSSI/mmic)) project. This package provides a component for generating parameterized molecules from existing force fields.
 
