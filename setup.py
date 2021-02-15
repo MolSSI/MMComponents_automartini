@@ -21,7 +21,7 @@ except Exception:
 
 setup(
     # Self-descriptive entries which should always be present
-    name="mmic_param",
+    name="mmic_ffpa",
     author="Andrew Abi-Mansour",
     author_email="andrew.gaam@gmail.com",
     description=short_description[0],
