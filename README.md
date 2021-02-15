@@ -1,23 +1,23 @@
 [//]: # (Badges)
-[![GitHub Actions Build Status](https://github.com/MolSSI/mmic_param/workflows/CI/badge.svg)](https://github.com/MolSSI/mmic_param/actions?query=workflow%3ACI)
-[![codecov](https://codecov.io/gh/MolSSI/mmic_param/branch/master/graph/badge.svg)](https://codecov.io/gh/MolSSI/mmic_param/branch/master)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/MolSSI/mmic_param.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/MolSSI/mmic_param/context:python)
+[![GitHub Actions Build Status](https://github.com/MolSSI/mmic_ffpa/workflows/CI/badge.svg)](https://github.com/MolSSI/mmic_ffpa/actions?query=workflow%3ACI)
+[![codecov](https://codecov.io/gh/MolSSI/mmic_ffpa/branch/master/graph/badge.svg)](https://codecov.io/gh/MolSSI/mmic_ffpa/branch/master)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/MolSSI/mmic_ffpa.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/MolSSI/mmic_ffpa/context:python)
 
 Forcefield param association component
 ========================================
 This is part of the [MolSSI](http://molssi.org) Molecular Mechanics Interoperable Components ([MMIC](https://github.com/MolSSI/mmic)) project. This package provides a component for generating parameterized molecules from existing force fields.
 
 <p align="center">
-<img src="mmic_param/data/ff_component.png">
+<img src="mmic_ffpa/data/ff_component.png">
 </p>
 
 # Basic Usage
 ```python
 # Import main component for running the computation
-from mmic_param import RunComponent
+from mmic_ffpa import RunComponent
 
 # Import the param input and molecule models that comply with MMSchema
-from mmic_param.models.input import ParamInput
+from mmic_ffpa.models.input import ParamInput
 from mmelemental.models.molecule import Molecule
 
 # Create an MMSchema molecule
@@ -33,22 +33,22 @@ mol, ff = paramOutput.mol, paramOutput.ff
 
 # Models and subcomponents
 This component provided 4 models derived from MMSchema: 
-- [ParamInput](https://github.com/MolSSI/mmic_param/blob/master/mmic_param/models/input.py#L8)
-- [ComputeInput](https://github.com/MolSSI/mmic_param/blob/master/mmic_param/models/input.py#L14)
-- [ParamOutput](https://github.com/MolSSI/mmic_param/blob/master/mmic_param/models/output.py#L12)
-- [ComputeOutput](https://github.com/MolSSI/mmic_param/blob/master/mmic_param/models/output.py#L8)
+- [ParamInput](https://github.com/MolSSI/mmic_ffpa/blob/master/mmic_ffpa/models/input.py#L8)
+- [ComputeInput](https://github.com/MolSSI/mmic_ffpa/blob/master/mmic_ffpa/models/input.py#L14)
+- [ParamOutput](https://github.com/MolSSI/mmic_ffpa/blob/master/mmic_ffpa/models/output.py#L12)
+- [ComputeOutput](https://github.com/MolSSI/mmic_ffpa/blob/master/mmic_ffpa/models/output.py#L8)
 
 ```python
-from mmic_param.models.input import ParamInput, ComputeInput, ParamOutput, ComputeOutput
+from mmic_ffpa.models.input import ParamInput, ComputeInput, ParamOutput, ComputeOutput
 ```
 
 This component provided 3 subcomponents for associating the force field parameters to a given MMSchema molecule: 
-- [PrepComponent](https://github.com/MolSSI/mmic_param/blob/master/mmic_param/components/prep_component.py#L7)
-- [ComputeComponent](https://github.com/MolSSI/mmic_param/blob/master/mmic_param/components/post_component.py#L5)
-- [PostComponent](https://github.com/MolSSI/mmic_param/blob/master/mmic_param/components/post_component.py#L5)
+- [PrepComponent](https://github.com/MolSSI/mmic_ffpa/blob/master/mmic_ffpa/components/prep_component.py#L7)
+- [ComputeComponent](https://github.com/MolSSI/mmic_ffpa/blob/master/mmic_ffpa/components/post_component.py#L5)
+- [PostComponent](https://github.com/MolSSI/mmic_ffpa/blob/master/mmic_ffpa/components/post_component.py#L5)
 
 ```python
-from mmic_param.components import PrepComponent, ComputeComponent, PostComponent
+from mmic_ffpa.components import PrepComponent, ComputeComponent, PostComponent
 ```
 # Supported engines
 - [GMX pdb2gmx](https://manual.gromacs.org/documentation/5.1/onlinehelp/gmx-pdb2gmx.html): part of the [Gromacs](https://www.gromacs.org) software suite
