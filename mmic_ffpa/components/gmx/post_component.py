@@ -2,7 +2,8 @@ from mmelemental.models.util.output import FileOutput
 
 # from mmelemental.models.forcefield import ForceField
 from mmelemental.models.molecule import Molecule
-from ..post_component import PostComponent
+from mmelemental.models.forcefield import ForceField
+from mmic_ffpa.components.post_component import PostComponent
 from mmic_ffpa.models.output import ParamOutput
 from typing import Dict, Any, List, Tuple, Optional
 
@@ -26,6 +27,6 @@ class PostComponent(PostComponent):
             with FileOutput(path=ff_name, clean=True) as fp:
                 fp.write(ff)
                 mol = Molecule.from_file(mol_name, ff_name)
-                # top = ForceField.from_file(mol_name, ff_name)
+                ff = ForceField.from_file(ff_name)
 
-        return True, ParamOutput(mol=mol)
+        return True, ParamOutput(mol=mol, forcefield=ff)
