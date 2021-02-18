@@ -58,6 +58,9 @@ jobs:
         git clone https://github.com/MolSSI/mmic_parmed
         cd mmic_parmed && pip install . && cd .. && rm -rf mmic_parmed
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        # get rif of parmed from PyPi and get the latest v from github
+        git clone https://github.com/parmed/parmed
+        cd parmed && pip install . && cd .. && rm -rf parmed
 
     - name: Install package
 
