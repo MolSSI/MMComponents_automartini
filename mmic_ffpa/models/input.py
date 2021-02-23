@@ -1,10 +1,10 @@
-from mmelemental.models.base import Base
+from mmelemental.models.base import ProtoModel
 from mmelemental.models.molecule import Molecule
 from pydantic import Field
 from typing import Optional
 
 
-class ParamInput(Base):
+class ParamInput(ProtoModel):
     forcefield: str = Field(..., description="Force field name e.g. charmm36.")
     solv_forcefield: Optional[str] = Field(
         None, description="Solvent force field name e.g. tip3p."
@@ -16,7 +16,7 @@ class ParamInput(Base):
     )
 
 
-class ComputeInput(Base):
+class ComputeInput(ProtoModel):
     forcefield: str = Field(..., description="Force field file name e.g. charmm36.")
     solv_forcefield: Optional[str] = Field(
         None, description="Solvent force field name e.g. tip3p."

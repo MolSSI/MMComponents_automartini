@@ -1,4 +1,4 @@
-from mmelemental.models.base import Base
+from mmelemental.models.base import ProtoModel
 from mmelemental.models.forcefield import ForceField
 from mmelemental.models.molecule import Molecule
 from mmelemental.models.util.output import ComputeOutput
@@ -10,7 +10,7 @@ class ComputeOutput(ComputeOutput):
     mol: str = Field(..., description="Molecule file string object.")
 
 
-class ParamOutput(Base):
+class ParamOutput(ProtoModel):
     forcefield: ForceField = Field(
         ..., description="Force field object. See :class:`ForceField`."
     )
