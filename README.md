@@ -27,12 +27,12 @@ mol = Molecule.from_file(path_to_file)
 paramInput = ParamInput(mol=mol, forcefield='amber99', engine='gmx')
 paramOutput = RunComponent.compute(paramInput)
 
-# Extract MMSchema mol and and its associated ff object
+# Extract MMSchema mol and its associated ff object
 mol, ff = paramOutput.mol, paramOutput.ff
 ```
 
 # Models and subcomponents
-This component provided 4 models derived from MMSchema: 
+This component provides 4 models derived from MMSchema: 
 - [ParamInput](https://github.com/MolSSI/mmic_ffpa/blob/master/mmic_ffpa/models/input.py#L8)
 - [ComputeInput](https://github.com/MolSSI/mmic_ffpa/blob/master/mmic_ffpa/models/input.py#L14)
 - [ParamOutput](https://github.com/MolSSI/mmic_ffpa/blob/master/mmic_ffpa/models/output.py#L12)
@@ -42,7 +42,7 @@ This component provided 4 models derived from MMSchema:
 from mmic_ffpa.models.input import ParamInput, ComputeInput, ParamOutput, ComputeOutput
 ```
 
-This component provided 3 subcomponents for associating the force field parameters to a given MMSchema molecule: 
+This package provides 3 components for associating the force field parameters to a given MMSchema molecule: 
 - [PrepComponent](https://github.com/MolSSI/mmic_ffpa/blob/master/mmic_ffpa/components/prep_component.py#L7)
 - [ComputeComponent](https://github.com/MolSSI/mmic_ffpa/blob/master/mmic_ffpa/components/post_component.py#L5)
 - [PostComponent](https://github.com/MolSSI/mmic_ffpa/blob/master/mmic_ffpa/components/post_component.py#L5)
