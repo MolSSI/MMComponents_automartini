@@ -33,7 +33,6 @@ computeOutput = ComputeComponent.compute(computeInput)
 
 # Convert file objects to MM objects
 paramOutput = PostComponent.compute(computeOutput)
-print(paramOutput.mol)
 
 ############## SOLVENT ##############
 # Prepare input for molecule in vacuum
