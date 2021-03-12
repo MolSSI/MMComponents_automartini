@@ -61,6 +61,8 @@ jobs:
         cd MMElemental && pip install . && cd .. && rm -rf MMElemental
         git clone https://github.com/MolSSI/mmic_parmed
         cd mmic_parmed && pip install . && cd .. && rm -rf mmic_parmed
+        git clone https://github.com/MolSSI/mmic_translator
+        cd mmic_translator && pip install . && cd .. && rm -rf mmic_translator
         # get rif of parmed from PyPi and get the latest v from github
         git clone https://github.com/parmed/parmed
         cd parmed && pip install . && cd .. && rm -rf parmed
