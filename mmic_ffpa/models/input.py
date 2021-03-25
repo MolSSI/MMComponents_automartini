@@ -1,28 +1,25 @@
-from mmelemental.models.base import ProtoModel
-from mmelemental.models.molecule import Molecule
+from mmelemental.models import Molecule, ForceField, ProcInput
 from pydantic import Field
-from typing import Optional
+from typing import Optional, Dict, Union
+
+__all__ = ["AssignInput", "ComputeInput"]
 
 
-class ParamInput(ProtoModel):
-    forcefield: str = Field(..., description="Force field name e.g. charmm36.")
-    solv_forcefield: Optional[str] = Field(
-        None, description="Solvent force field name e.g. tip3p."
-    )
-    mol: Molecule = Field(..., description="Molecule object. See :class: ``Molecule``.")
-    engine: str = Field(
+class AssignInput(ProcInput):
+    molecule: Dict[str, Molecule] = Field(
         ...,
-        description="Engine name. See supported engines in :tuple:``mmic_ffpa.components.engines``.",
+        description="Molecular mechanics molecule object(s). See the :class:``Molecule`` class. "
+        "Example: mol = {'ligand': Molecule, 'receptor': Molecule, 'solvent': Molecule}.",
     )
-
-
-class ComputeInput(ProtoModel):
-    forcefield: str = Field(..., description="Force field file name e.g. charmm36.")
-    solv_forcefield: Optional[str] = Field(
-        None, description="Solvent force field name e.g. tip3p."
-    )
-    mol: str = Field(..., description="Molecule file contents.")
-    engine: str = Field(
+    forcefield: Union[Dict[str, ForceField], Dict[str, str]] = Field(
         ...,
-        description="Engine name. See supported engines in :tuple:``mmic_ffpa.components.engines``.",
+        description='Forcefield object(s) or name(s) for every Molecule defined in "molecule".',
     )
+
+
+class ComputeInput(ProcInput):
+    forcefield: Dict[str, str] = Field(
+        ..., description="Force field file name e.g. charmm36."
+    )
+    molecule: Dict[str, str] = Field(..., description="Molecule file contents.")
+    proc_input: AssignInput = Field(..., description="Procedure input schema.")
