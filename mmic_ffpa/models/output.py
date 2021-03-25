@@ -1,8 +1,10 @@
-from mmelemental.models.util.output import ComputeOutput
 from mmelemental.models import Molecule, ForceField, ProcOutput
 from .input import AssignInput
 from pydantic import Field
 from typing import Optional, Dict
+
+
+__all__ = ["AssignOutput"]
 
 
 class AssignOutput(ProcOutput):
@@ -16,11 +18,3 @@ class AssignOutput(ProcOutput):
         ...,
         description="Forcefield object(s).",
     )
-
-
-class ComputeOutput(ComputeOutput):
-    proc_input: AssignInput = Field(
-        None, description="Procedure input schema."
-    )  # must become required field, eventually
-    forcefield: str = Field(..., description="Force field params file string object.")
-    molecule: str = Field(..., description="Molecule file string object.")

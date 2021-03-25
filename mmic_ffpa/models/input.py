@@ -2,7 +2,7 @@ from mmelemental.models import Molecule, ForceField, ProcInput
 from pydantic import Field
 from typing import Optional, Dict, Union
 
-__all__ = ["AssignInput", "ComputeInput"]
+__all__ = ["AssignInput"]
 
 
 class AssignInput(ProcInput):
@@ -15,11 +15,3 @@ class AssignInput(ProcInput):
         ...,
         description='Forcefield object(s) or name(s) for every Molecule defined in "molecule".',
     )
-
-
-class ComputeInput(ProcInput):
-    forcefield: Dict[str, str] = Field(
-        ..., description="Force field file name e.g. charmm36."
-    )
-    molecule: Dict[str, str] = Field(..., description="Molecule file contents.")
-    proc_input: AssignInput = Field(..., description="Procedure input schema.")
