@@ -5,6 +5,8 @@ A short description of the project.
 
 # Add imports here
 from . import components, models
+from .components import *
+from .models import *
 
 # Handle versioneer
 from ._version import get_versions
