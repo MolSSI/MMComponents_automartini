@@ -1,4 +1,5 @@
-from mmelemental.models import Molecule, ForceField, ProcInput
+from mmelemental.models import Molecule, ForceField
+from cmselemental.models import ProcInput
 from pydantic import Field
 from typing import Optional, Dict, Union
 
